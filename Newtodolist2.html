@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="todo">
+    <h1 >TODO LIST</h1>
+    </div>
+    
+<div class="input1">
+    <input id="input-box" type="text" placeholder="write some text">
+<button onclick="addTask()" class="but">Adding</button>
+
+<ul id="list-container">
+    <!-- <li class="checked">Task 1</li>
+    <li >Task 2</li>
+    <li >Task 3</li> -->
+</ul>
+</div>
+
+  <script src="script.js"></script>  
+</body>
+<style>
+    /* ul li ::before{
+        content: '';
+        position: absolute;
+        height: 28px;
+        width: 28px;
+        border-radius: 50%;
+        background-image: url('https://icons.veryicon.com/png/o/miscellaneous/wens/uncheck.png');
+        background-size: cover;
+        background-position: center;
+    } */
+    .todo{
+    width: 100%;
+    height: 20%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+}
+.input1{
+    border: 1px solid black;
+    width: 100%;
+    height: 150px;
+}
+input{
+    width: 20%;
+    height: 20px;
+    border-radius: 15px;
+}
+.but{
+    cursor: pointer;
+}
+#list-container{
+    position: relative;
+    width: 15%;
+}
+ul li {
+    list-style: none;
+    cursor: pointer;
+    user-select: none;
+    padding: 2px ;
+    position: relative;
+}
+ul li span {
+    right: 0%;
+    position: absolute;
+    font-size: 22px;
+    cursor: pointer;
+}
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+ul li button {
+    right: 0%;
+    position: absolute;
+    font-size: 22px;
+    cursor: pointer;
+}
+</style>
+
+</html>

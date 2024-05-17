@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="crud.js"></script>
+
+    <!-- // star html -->
+<div class="crud">
+    <div class="crudbox-1"> <h1 class="crudhead">CRUD</h1>
+        <h3> Student Name :  <br>  <input id="input1" type="text" placeholder="Enter Name" ></h3>
+        <h3> Student Age :     <br>  <input id="input2" type="text" placeholder="Enter Name" ></h3>
+        <h3> Student Subject :   <br> <input id="input3" type="text" placeholder="Enter Name" ></h3>
+        <h3> Student ID :      <br>    <input id="input4" type="text" placeholder="Enter Name" ></h3> <br>
+        <button class="button1" onclick="submittask()">Submit</button>
+    </div>
+    <div class="crudbox-2">
+        <table id="tableid" class="tableclass">
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Student Age</th>
+                <th>Student Subject</th>
+                <th>Student ID</th>
+                <th>Edit</th>
+                <th>Delete</th>
+                </tr>
+                <tbody id="list-container">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+        </thead></table>
+    </div>
+
+
+
+</div>
+
+</body>
+<style>
+    .button2{
+        width: 100%;
+        
+    }
+    .button3{
+        width: 100%;
+        
+    }
+    .button3:hover{
+        width: 100%;
+        background-color: blue;
+    }
+  .button2:hover{
+    background-color: blue;
+    width: 100%;
+  }
+    body{
+        background-color: lightseagreen;
+    }
+   table tbody td {
+border: 1px solid black;
+    }
+.tableclass{
+    width: 100%;
+    margin-top:  10%;
+    background-color:lightgray;
+}
+th {
+    border: 1px solid black;
+}
+    .crudhead{
+        
+        text-align: center;
+    }
+    .crud{
+        display: flex;
+        flex-direction: row;
+    }
+    .crudbox-1{
+        padding-top: 5%;
+        padding-left: 1%;
+        width: 40%;
+        height: 100lvh;
+        border: 1px solid black;
+    }
+    .crudbox-2{
+        width: 60%;
+        height: 100lvh;
+        border: 1px solid black;
+    }
+    .button1{
+        cursor: pointer;
+        margin-left: 5%;
+    }
+    .button1:hover{
+        background-color: blue;
+    }
+</style>
+</html>

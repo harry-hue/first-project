@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<script>document.querySelector('button').addEventListener('click', Onpost);
+
+  function Onpost() {
+      // Get data from popupcard
+      const textareaContent = document.getElementById('textarea').value;
+      const imageInput = document.getElementById('output').src;
+      const additionalText = document.getElementById('imageinput').value;
+      
+      // Data object to hold the extracted values
+      const data = {
+          text: textareaContent,
+          image: imageInput,
+          additional: additionalText
+      };
+  
+      // Map the data to the profile card
+      mapDataToProfileCard(data);
+  }
+  
+  function mapDataToProfileCard(data) {
+      // Map the data to profile card elements
+      document.getElementById('profile-textarea').value = data.text;
+      document.getElementById('img').src = data.image;
+      // Assuming additional text is mapped to another element or combined with existing one
+      // You can customize this part as per your requirement
+      const additionalTextElement = document.createElement('p');
+      additionalTextElement.textContent = data.additional;
+      document.getElementById('profile-card').appendChild(additionalTextElement);
+  }
+  
+  // Load file function to display selected image
+  function loadFile(event) {
+      const output = document.getElementById('output');
+      output.src = URL.createObjectURL(event.target.files[0]);
+      output.onload = function() {
+          URL.revokeObjectURL(output.src); // Free memory
+      }
+  }
+  </script>
+<body>
+  <div id="popupcard">
+    <textarea id="textarea" placeholder="What is on your Mind?"></textarea>
+    <div id="imageButton">
+        <div class="image-cross">
+            <img id="innerimage-cross" style="width: 35px; height: 40px; border-radius: 30px; cursor: pointer; margin-right: 4%;" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR3CZFu12xQda2hyOOYhgmPPrUWJuymKhIhpmG545nOaaw32XS3">
+        </div>
+        <input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display: none;">
+        <img id="output" style="width: 100%;" />
+    </div>
+    <div class="theme-emoji">
+        <img style="width: 40px; border-radius: 30px; display: flex;" src="https://static.xx.fbcdn.net/assets/?revision=778287499499214&name=comet-Aa-desktop&density=1">
+        <img style="width: 40px; border-radius: 30px; display: flex;" src="https://cdn.iconscout.com/icon/free/png-512/free-emoji-smile-happy-enjoy-56061.png?f=webp&w=256">
+    </div>
+    <div class="options">
+        <input id="imageinput" type="text" placeholder="Add something" style="width: 100%; font-size: medium; border: 0;">
+        <ul class="list">
+            <li>
+                <label for="file" style="cursor: pointer;">
+                    <img style="height: 24px; width: 24px;" src="https://static.xx.fbcdn.net/rsrc.php/v3/y7/r/Ivw7nhRtXyo.png"/>
+                </label>
+            </li>
+            <li><img style="height: 24px; width: 24px;" src="https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/b37mHA1PjfK.png"></li>
+            <li><img style="height: 24px; width: 24px;" src="https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Y4mYLVOhTwq.png"></li>
+            <li><img style="height: 24px; width: 24px;" src="https://static.xx.fbcdn.net/rsrc.php/v3/y1/r/8zlaieBcZ72.png"></li>
+            <li><img style="height: 24px; width: 24px;" src="https://static.xx.fbcdn.net/rsrc.php/v3/yT/r/q7MiRkL7MLC.png"></li>
+        </ul>
+    </div>
+    <button onclick="Onpost()">Post</button>
+  </div>
+  
+  <div id="profile-card">
+    <div id="profilepic" class="profilepic">
+        <textarea id="profile-textarea" style="width: 100%;"></textarea>
+        <img id="img" style="width: 100%; height: 100%;" src="">
+    </div>
+  </div>
+</body>
+</html>
+
+
